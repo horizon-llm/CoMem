@@ -1,0 +1,2 @@
+LOCAL_DIR=${LOCAL_DIR:-"checkpoints/verl_agent_alfworld_v3/grpo_trunc1_qwen3_8b_20steps_nopenalty/global_step_150/actor"}
+python scripts/model_merger.py merge --backend fsdp --local_dir ${LOCAL_DIR} --target_dir ${LOCAL_DIR}/huggingface

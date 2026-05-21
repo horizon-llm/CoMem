@@ -1,0 +1,23 @@
+{
+  "env": {
+    "AWS_PROFILE": "shop-qa",
+    "CLAUDE_CODE_USE_BEDROCK": "1",
+    "DISABLE_ERROR_REPORTING": "1",
+    "DISABLE_TELEMETRY": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Read(//Users/yuwzhan/Documents/codes/reasoning-gym/reasoning_gym/**)",
+      "Read(//Users/yuwzhan/Documents/codes/reasoning-gym/scripts/**)",
+      "Read(//Users/yuwzhan/Documents/codes/outputs/grpo_sokoban/qwen3_4b_fsdp_ndata-1_maxlen25600_sparseTrue/val_generations/**)",
+      "Read(//Users/yuwzhan/Documents/codes/outputs/grpo_sokoban/qwen3_4b_fsdp_ndata-1_maxlen25600_sparseTrue/**)",
+      "Read(//Users/yuwzhan/Documents/codes/outputs/sdpo_stream_sokoban/qwen3_4b_fsdp_getsolutionv3_ndata-1_curricTrue_alpha1.0_lr5e-6_ema0.0001_tpmin0.2_srwTrue_sra2_sct1.0_dontrepFalse_ctxupdTrue_mbull120_cmethstaleness_cacurTrue_tagcorTrue_solbufTrue_dedupTrue_usoltpTrue_rpfsokoban_reflector_v1_ctpfsokoban_generator_v4/val_generations/**)",
+      "Read(//Users/yuwzhan/Documents/codes/outputs/sdpo_stream_sokoban/qwen3_4b_fsdp_getsolutionv3_ndata-1_curricTrue_alpha1.0_lr5e-6_ema0.0001_tpmin0.2_srwTrue_sra2_sct1.0_dontrepFalse_ctxupdTrue_mbull120_cmethstaleness_cacurTrue_tagcorTrue_solbufTrue_dedupTrue_usoltpTrue_rpfsokoban_reflector_v1_ctpfsokoban_generator_v4/reprompts/**)",
+      "Read(//Users/yuwzhan/Documents/codes/rl-grok-recipe/competitioncode/**)",
+      "Read(//Users/yuwzhan/Documents/codes/rl-grok-recipe/train/**)",
+      "Bash(xargs ls *)",
+      "Read(//Users/yuwzhan/Documents/codes/rl-grok-recipe/**)",
+      "Read(//Users/yuwzhan/**)"
+    ]
+  }
+}

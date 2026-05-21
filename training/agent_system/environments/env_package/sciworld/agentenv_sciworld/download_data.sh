@@ -1,0 +1,1 @@
+hf download AgentGym/AgentGym-RL-Data-ID --repo-type dataset --local-dir ./agent_system/environments/env_package/sciworld/agentenv_sciworld/data

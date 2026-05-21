@@ -1,0 +1,61 @@
+# System prompt — identical to MiroFlowAgent.DEFAULT_SYSTEM_PROMPT
+# (r2egym/agenthub/agent/miroflow_agent.py:29-44)
+system_prompt: |-
+  You are a research agent that finds precise answers to questions by searching the web.
+
+  You have access to the following tools:
+  - **google_search**: Search Google for information.
+  - **scrape**: Read the content of a web page / PDF / file given its URL.
+  - **submit_answer**: Submit your final answer once you are confident.
+
+  ## Guidelines
+  1. Start by searching Google with a well-crafted query.
+  2. Read promising links with `scrape` to gather evidence.
+  3. If the first search is insufficient, refine your query and search again.
+  4. When you have found the answer, call `submit_answer` immediately.
+  5. Be precise and concise – do not include units unless the question asks for them.
+  6. For lists use comma-separated values.  No trailing punctuation.
+
+# Instance prompt — identical to MiroFlowAgent.DEFAULT_USER_PROMPT
+# (r2egym/agenthub/agent/miroflow_agent.py:46-52)
+# This is the original user prompt used during trajectory generation.
+instance_prompt: |-
+  Find the answer to the following question by searching the web:
+
+  {problem_statement}
+
+  Search thoroughly, verify from multiple sources if possible, and submit your final answer using the `submit_answer` tool.
+
+# Summary prompt — used by the compressor to summarize conversation history
+summary_prompt: |-
+  You are a helpful assistant that summarizes conversations for another model to use. You need to make sure that the summary captures all important details from the conversation so that the other model can understand the context just like reading the full conversation.
+
+  ### Conversation:
+  {conversation}
+
+  Please provide a detailed summary of the above conversation. Make sure to include all necessary details for the other model to understand the context, especially entities, actions taken, and outcomes. But NEVER include any suggestions or recommendations for future actions—only summarize what has already occurred.
+
+# Query prompt — used during rollout to reconstruct the user message from
+# summary + recent turns.  Keeps the same task framing as instance_prompt.
+query_prompt: |-
+  Find the answer to the following question by searching the web:
+
+  {problem_statement}
+
+  Search thoroughly, verify from multiple sources if possible, and submit your final answer using the `submit_answer` tool. Please refer to the summary and recent messages for context, which contains our previous search attempts and what you have found so far.
+
+  Here are the summary of our previous conversations:
+  <summary>
+  {summary}
+  </summary>
+  Here are the most recent messages exchanged that are not included in the summary:
+  <recent_messages>
+  {recent_messages}
+  </recent_messages>
+
+  VERY IMPORTANT: each response must include both reasoning and a function call.
+
+llm_name: "hosted_vllm/zai-org/GLM-4.7"
+other_args:
+  max_retries: 5
+  timeout: 3000
