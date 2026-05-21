@@ -83,6 +83,11 @@ bash evaluation/scripts/eval_full_context_qmax.sh      # SWE-bench + Qwen3-Coder
 
 ### BrowseComp
 
+Start the GLM-4.7 server with 128k context for BrowseComp:
+```bash
+bash evaluation/scripts/start_vllm_server_glm_cpu_128k.sh
+```
+
 Set required environment variables:
 ```bash
 export SERPER_API_KEY=<your-serper-api-key>
