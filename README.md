@@ -2,7 +2,7 @@
 <p align="center"><em>Context Management with A Decoupled Long-Context Model</em></p>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/2506.xxxxx">
+  <a href="https://arxiv.org/abs/2605.30842">
     <img src="https://img.shields.io/badge/arXiv-Paper-red?style=flat-square&logo=arxiv" alt="arXiv Paper"></a>
   &nbsp;
   <a href="https://github.com/horizon-llm/CoMem">
