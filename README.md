@@ -28,6 +28,7 @@ Context management enables agentic models to solve long-horizon tasks through it
 
 - [Overview](#overview)
 - [Results](#results)
+- [Checkpoints](#checkpoints)
 - [Installation](#installation)
 - [Training](#training)
 - [Evaluation](#evaluation)
@@ -75,6 +76,17 @@ Notably, on the DeepSWE backbone, CoMem (GRPO) achieves a **41.0% resolution rat
 <p align="center"><em>Latency and speedup results for GLM-4.7 over various batch sizes. CoMem's speedup scales favorably with increased throughput, achieving 2.52x at batch size 256.</em></p>
 
 Furthermore, under high concurrency (64 concurrent requests), CoMem achieves up to **4.95x peak per-step speedup**, as its bounded prompt size avoids the KV cache saturation that causes latency explosion in full-context baselines.
+
+# Checkpoints
+
+The released CoMem memory-model checkpoints are available on Hugging Face:
+
+| Training stage / Agent | Checkpoint |
+|------------------------|------------|
+| SFT warm-up | [YWZBrandon/summary-sft-qwen3-4b](https://huggingface.co/YWZBrandon/summary-sft-qwen3-4b) |
+| GRPO with DeepSWE | [YWZBrandon/verl_agent_swebench_t100_sum_v1_grpo_qwen3_4b_temp1_pv5_2048_sft_v2_grp16_s150](https://huggingface.co/YWZBrandon/verl_agent_swebench_t100_sum_v1_grpo_qwen3_4b_temp1_pv5_2048_sft_v2_grp16_s150) |
+| GRPO with GLM-4.7 | [YWZBrandon/verl_agent_swebench_sum_reward_v2_grpo_qwen3_4b_glm_pv5_2048_sft_v2_grp16_max40_s35](https://huggingface.co/YWZBrandon/verl_agent_swebench_sum_reward_v2_grpo_qwen3_4b_glm_pv5_2048_sft_v2_grp16_max40_s35) |
+| GRPO with Qwen3-Coder-Max | [YWZBrandon/verl_agent_swebench_sum_reward_v2_grpo_qwen3_4b_qmax_pv5_2048_sft_v2_grp16_max40_s35](https://huggingface.co/YWZBrandon/verl_agent_swebench_sum_reward_v2_grpo_qwen3_4b_qmax_pv5_2048_sft_v2_grp16_max40_s35) |
 
 # Installation
 
