@@ -1,8 +1,3 @@
-"""
-Refactored SumAPIRespRecentLiteLLMTrajectoryCollector for readability.
-Preserves 100% of the original runtime behavior and interfaces.
-"""
-
 import asyncio
 import itertools
 import json
